@@ -16,6 +16,7 @@ RUN yum -y install pgpool-II-pg96
 
 EXPOSE 22
 EXPOSE 9898
+EXPOSE 9999
 
 CMD ["pgpool"]
 
