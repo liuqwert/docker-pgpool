@@ -17,6 +17,6 @@ VOLUME [/etc/pgpool-II,/var/log/pgpool]
 EXPOSE 9898
 EXPOSE 9999
 
-CMD ["pgpool"]
+CMD ["pgpool -n"]
 
 
