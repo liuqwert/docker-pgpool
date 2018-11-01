@@ -8,8 +8,7 @@ VOLUME /etc/pgpool
 
 RUN yum update -y; exit 0
 RUN yum -y install http://www.pgpool.net/yum/rpms/4.0/redhat/rhel-7-x86_64/pgpool-II-release-4.0-1.noarch.rpm
-RUN yum -y pgpool-II-pg10
-RUN yum install pgpool-II-pg10-extensions
+RUN yum install pgpool-II-pg96
 
 # Copy entrypoint script and Odoo configuration file
 COPY ./entrypoint.sh /
