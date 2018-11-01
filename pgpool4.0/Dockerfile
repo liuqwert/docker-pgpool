@@ -11,10 +11,12 @@ RUN yum -y install http://www.pgpool.net/yum/rpms/4.0/redhat/rhel-7-x86_64/pgpoo
 RUN yum -y install pgpool-II-pg96
 
 # Copy entrypoint script and Odoo configuration file
-COPY ./entrypoint.sh /
-RUN chmod +x /entrypoint.sh
+# COPY ./entrypoint.sh /
+# RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+EXPOSE 22
+EXPOSE 9898
 
+CMD ["pgpool"]
 
 
