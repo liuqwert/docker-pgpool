@@ -9,8 +9,9 @@ RUN yum -y install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-
 RUN yum -y install postgresql10
 RUN yum -y install http://www.pgpool.net/yum/rpms/4.0/redhat/rhel-7-x86_64/pgpool-II-pg10-4.0.1-1pgdg.rhel7.x86_64.rpm
 
-RUN  wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
-     tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+RUN  yum -y install wget \
+     && wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+     && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 ENV CHECK_USER replication_user
 ENV CHECK_PASSWORD replication_pass
