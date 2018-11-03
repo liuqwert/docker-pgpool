@@ -19,6 +19,11 @@ ENV CHECK_PGCONNECT_TIMEOUT 10
 ENV WAIT_BACKEND_TIMEOUT 120
 ENV REQUIRE_MIN_BACKENDS 0
 
+RUN rm /etc/pgpool-II/pool_hba.conf
+RUN rm /etc/pgpool-II/pool_passwd
+RUN rm /etc/pgpool-II/pgpool.conf
+COPY pgpool.conf /etc/pgpool-II/pgpool.conf
+
 COPY bin/entrypoint.sh /entrypoint.sh
 COPY bin/pgpool_setup.sh /pgpool_setup.sh
 COPY bin/pgpool_start.sh /pgpool_start.sh
