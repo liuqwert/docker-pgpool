@@ -25,6 +25,7 @@ RUN rm /etc/pgpool-II/pool_hba.conf
 RUN rm /etc/pgpool-II/pcp.conf
 RUN rm /etc/pgpool-II/pgpool.conf
 COPY conf/pgpool.conf /etc/pgpool-II/pgpool.conf
+COPY conf/pool_hba.conf /etc/pgpool-II/pool_hba.conf
 
 COPY bin/entrypoint.sh /entrypoint.sh
 COPY bin/pgpool_setup.sh /pgpool_setup.sh
