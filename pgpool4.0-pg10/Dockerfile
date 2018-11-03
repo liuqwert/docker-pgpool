@@ -23,6 +23,7 @@ RUN rm /etc/pgpool-II/pool_hba.conf
 RUN rm /etc/pgpool-II/pcp.conf
 RUN rm /etc/pgpool-II/pgpool.conf
 COPY pgpool.conf /etc/pgpool-II/pgpool.conf
+RUN chmod +w /etc/pgpool-II/*.conf
 
 COPY bin/entrypoint.sh /entrypoint.sh
 COPY bin/pgpool_setup.sh /pgpool_setup.sh
