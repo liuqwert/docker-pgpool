@@ -20,7 +20,7 @@ ENV WAIT_BACKEND_TIMEOUT 120
 ENV REQUIRE_MIN_BACKENDS 0
 
 RUN rm /etc/pgpool-II/pool_hba.conf
-RUN rm /etc/pgpool-II/pool_passwd
+RUN rm /etc/pgpool-II/pcp.conf
 RUN rm /etc/pgpool-II/pgpool.conf
 COPY pgpool.conf /etc/pgpool-II/pgpool.conf
 
