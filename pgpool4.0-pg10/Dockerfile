@@ -13,11 +13,13 @@ RUN  yum -y install wget \
      && wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
      && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
+ENV PCP_USER replication_user
+ENV PCP_PASSWORD replication_pass
 ENV CHECK_USER replication_user
 ENV CHECK_PASSWORD replication_pass
-ENV CHECK_PGCONNECT_TIMEOUT 10
 ENV WAIT_BACKEND_TIMEOUT 120
 ENV REQUIRE_MIN_BACKENDS 0
+ENV DB_USERS db_user:md5pass
 
 RUN rm /etc/pgpool-II/pool_hba.conf
 RUN rm /etc/pgpool-II/pcp.conf
