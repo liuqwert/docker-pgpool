@@ -24,6 +24,8 @@ COPY bin/pgpool_setup.sh /pgpool_setup.sh
 COPY bin/pgpool_start.sh /pgpool_start.sh
 RUN chmod +x /*.sh
 
+USER postgres
+
 EXPOSE 9898
 EXPOSE 9999
 
