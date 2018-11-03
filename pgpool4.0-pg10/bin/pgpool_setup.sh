@@ -100,5 +100,4 @@ do
 done
 
 touch $CONFIG_FILE $PCP_FILE $HBA_FILE
-chown postgres:postgres $CONFIG_FILE $PCP_FILE $HBA_FILE $POOL_PASSWD_FILE
 
